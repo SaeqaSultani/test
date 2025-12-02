@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Magic Garden</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* === Basic Styles === */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  padding: 30px;
+  color: #333;
+}
+
+/* Pseudo-elements */
+h1::before {
+  content: "🌷 ";
+}
+h1::after {
+  content: " 🌺";
+}
+p::first-letter {
+  font-size: 30px;
+  color: crimson;
+}
+p::first-line {
+  font-weight: bold;
+}
+::selection {
+  background-color: yellow;
+  color: black;
+}
+li::marker {
+  color: green;
+  font-size: 20px;
+}
+
+/* Pseudo-classes */
+p:hover {
+  background-color: #ffeef0;
+}
+
+p:first-child {
+  color: purple;
+}
+
+p:last-child {
+  color: orange;
+}
+
+p:nth-child(2) {
+  color: darkgoldenrod;
+}
+
+p:not(.special) {
+  font-style: italic;
+}
+
+input:focus {
+  border: 5px solid blue;
+}
+
+input:checked {
+  outline: 2px solid red;
+}
+
+form input:disabled {
+  background-color: lightgray;
+}
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: green;
+}
+
+#title:target {
+  background-color: yellow;
+}
+
+/* Empty example */
+div:empty {
+  background-color: lightblue;
+  height: 50px;
+}
+
+/* Root example */
+:root {
+  --main-color: #e91e63;
+}
+body {
+  border-top: 5px solid var(--main-color);
+}
+
+</style>
+
+<body>
+
+  <h1 id="title">Welcome to the Magic Garden</h1>
+
+  <div class="garden">
+    <p class="flower">🌹 Rose is red</p>
+    <p class="flower special">🌻 Sunflower is bright</p>
+    <p class="flower">🌸 Cherry blossom is soft</p>
+    <p class="flower">🌼 Daisy is cheerful</p>
+  </div>
+
+  <ul class="plant-list">
+    <li>Rose</li>
+    <li>Sunflower</li>
+    <li>Cherry Blossom</li>
+    <li>Daisy</li>
+  </ul>
+
+  <a href="#title" class="back">Back to top</a>
+
+  <form>
+    <input type="text" placeholder="Type your favorite flower">
+    <input type="checkbox" checked> I love flowers
+    <input type="text" placeholder="Disabled field" disabled>
+  </form>
+
+</body>
+</html>
